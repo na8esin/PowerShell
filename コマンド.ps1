@@ -5,40 +5,39 @@ gcm mysqld | fl
 Start-Job {mysqld}
 
 Set-Alias -name dc -value docker-compose
-Set-Alias -name gca -value "git commit -a -m"
 
 # out-file
 
 
-# ƒtƒ@ƒCƒ‹–¼‚ğÄ‹A“I‚ÉƒŠƒl[ƒ€
+# ãƒ•ã‚¡ã‚¤ãƒ«åã‚’å†å¸°çš„ã«ãƒªãƒãƒ¼ãƒ 
 Get-ChildItem -Recurse -File | Rename-Item -NewName { $_.Name -replace 'insurer','product'}
-# Set-Contentƒo[ƒWƒ‡ƒ“B’uŠ·Œã‚ÉA“ñ‚Â–Ú‚Ì’uŠ·‘ÎÛ‚ª‚ ‚éê‡‚Í‡”Ô‚É’ˆÓ
+# Set-Contentãƒãƒ¼ã‚¸ãƒ§ãƒ³ã€‚ç½®æ›å¾Œã«ã€äºŒã¤ç›®ã®ç½®æ›å¯¾è±¡ãŒã‚ã‚‹å ´åˆã¯é †ç•ªã«æ³¨æ„
 Get-ChildItem -Recurse -File -Name |
  %{$FileName=$_; `
   (gc -Raw $_) -creplace 'Insurer','Product' -creplace 'insurer','product' |
   Set-Content -encoding Default $FileName -NoNewline }
 
 
-# ƒŠƒl[ƒ€BˆêŠK‘w‚¾‚¯‚Ìê‡
+# ãƒªãƒãƒ¼ãƒ ã€‚ä¸€éšå±¤ã ã‘ã®å ´åˆ
 ls | Rename-Item -NewName { $_.Name -replace 'cat','agent'}
 
-# ƒnƒCƒtƒ“Œn‚ÌƒpƒX‚ğ•Ï‚¦‚é
+# ãƒã‚¤ãƒ•ãƒ³ç³»ã®ãƒ‘ã‚¹ã‚’å¤‰ãˆã‚‹
 Get-ChildItem -Recurse -File -Name |
- %{$FileName=$_; (gc -Raw $_)@-creplace 'parent-agent','group' |
+ %{$FileName=$_; (gc -Raw $_)ã€€-creplace 'parent-agent','group' |
  Set-Content -encoding Default $FileName -NoNewline }
 
-# ƒtƒ@ƒCƒ‹w’è‚µ‚ÄAƒ‚ƒWƒ…[ƒ‹–¼‚ğ’uŠ·
+# ãƒ•ã‚¡ã‚¤ãƒ«æŒ‡å®šã—ã¦ã€ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«åã‚’ç½®æ›
 $FileName="graphql.schema.ts"; (gc -Raw $FileName) -creplace 'cat','agent' -creplace 'Cat','Agent' |
  out-file -encoding Default $FileName
 
 
-# node_modules‚ğÄ‹A“I‚Éíœ‚·‚é
+# node_modulesã‚’å†å¸°çš„ã«å‰Šé™¤ã™ã‚‹
 ri '*/node_modules' -Recurse -Force
 
-# ƒoƒbƒNƒOƒ‰ƒ“ƒhƒvƒƒZƒX‚Åcake‚ğ—§‚¿ã‚°‚é
+# ãƒãƒƒã‚¯ã‚°ãƒ©ãƒ³ãƒ‰ãƒ—ãƒ­ã‚»ã‚¹ã§cakeã‚’ç«‹ã¡ä¸Šã’ã‚‹
 $proc = start -filepath .\bin\cake -ArgumentList "server -p 8082" -WindowStyle Hidden -PassThru
 
-# php‚ÌƒvƒƒZƒX‚ğŠm”F‚·‚é
+# phpã®ãƒ—ãƒ­ã‚»ã‚¹ã‚’ç¢ºèªã™ã‚‹
 Get-Process -name php
 
 Get-Process -name php | %{spps $_.id}

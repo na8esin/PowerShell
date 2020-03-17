@@ -2,7 +2,6 @@ Set-Alias -name gco -value gitCheckout
 Set-Alias -name gca -value gitCommitAutomaticallyStageFiles
 Set-Alias -name gpom -value gitPushOriginMaster
 
-# ƒvƒƒ“ƒvƒg‚Ìİ’è
 function prompt(){
     $Host.ui.RawUI.WindowTitle = Convert-Path (pwd).path
 }
