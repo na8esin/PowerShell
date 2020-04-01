@@ -1,5 +1,6 @@
 New-Item -Path . -Name C:\xampp\php -Value C:\Users\t.watanabe\scoop\apps\php56\current -ItemType SymbolicLink
-New-Item -Path . -Name rootfs -Value C:\Users\t.watanabe\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs -ItemType SymbolicLink
+New-Item -ItemType SymbolicLink -Name php.exe -Target C:\Users\na8es\php\php-7.3.16-Win32-VC15-x64\php.exe
+
 
 gcm mysqld | fl
 Start-Job {mysqld}
