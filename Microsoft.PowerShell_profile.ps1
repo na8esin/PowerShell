@@ -5,7 +5,7 @@ Set-Alias -name gpom -value gitPushOriginMaster
 Set-Alias -name gpod -value gitPushOriginDevelop
 Set-Alias -name glo -value gitLogOneline
 Set-Alias -name unit -value vendorBinPhpUnit
-Set-Alias -name cakeserver -value binCakeServer
+Set-Alias -name cake -value binCakeServer
 
 function prompt(){
     $Host.ui.RawUI.WindowTitle = Convert-Path (pwd).path
