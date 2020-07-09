@@ -37,3 +37,7 @@ function gitCheckout() {
 function gitLogOneline($rows) {
   git log --oneline $rows
 }
+
+function nano($path) {
+  wsl nano /mnt/c/Users/$env:USERNAME/$path
+}
