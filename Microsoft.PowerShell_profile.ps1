@@ -7,6 +7,8 @@ Set-Alias -name glo -value gitLogOneline
 Set-Alias -name unit -value vendorBinPhpUnit
 Set-Alias -name cake -value binCakeServer
 
+Set-PSReadlineOption -BellStyle None
+
 function prompt(){
     $Host.ui.RawUI.WindowTitle = Convert-Path (pwd).path
     $env:LANG = "ja_JP.UTF-8"
