@@ -11,7 +11,7 @@ if( $found ){
 #[Ports]
 
 #All the ports you want to forward separated by coma
-$ports=@(80,443,10000,3000,5000,4000,8080, 3306);
+$ports=@(80,443,10000,3000,5000,4000,8080);
 
 
 #[Static ip]

@@ -1,5 +1,7 @@
 # ポート転送確認
 netsh interface portproxy show all
+# ポート転送削除。一つ一つ消さないといけないの？面倒
+netsh interface portproxy delete v4tov4 3306 0.0.0.0
 
 New-Item -Path . -Name C:\xampp\php -Value C:\Users\t.watanabe\scoop\apps\php56\current -ItemType SymbolicLink
 # これは成功するけどこんなことしてもだめだ。ディレクトリごとパスを通さないとphp7ts.dllが読めない
