@@ -1,3 +1,6 @@
+# ポート転送確認
+netsh interface portproxy show all
+
 New-Item -Path . -Name C:\xampp\php -Value C:\Users\t.watanabe\scoop\apps\php56\current -ItemType SymbolicLink
 # これは成功するけどこんなことしてもだめだ。ディレクトリごとパスを通さないとphp7ts.dllが読めない
 New-Item -ItemType SymbolicLink -Name php.exe -Target C:\Users\na8es\php\php-7.3.16-Win32-VC15-x64\php.exe
