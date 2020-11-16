@@ -1,6 +1,7 @@
 Set-Alias -name gco -value gitCheckout
 Set-Alias -name gca -value gitCommitAutomaticallyStageFiles
 Set-Alias -name gcad -value gitCommitAutomaticallyStageFilesDevelop
+Set-Alias -name gpo -value gitPushOrigin
 Set-Alias -name gpom -value gitPushOriginMaster
 Set-Alias -name gpod -value gitPushOriginDevelop
 Set-Alias -name glo -value gitLogOneline
@@ -26,6 +27,9 @@ function gitCommitAutomaticallyStageFilesDevelop($message) {
 }
 function gitCommitAutomaticallyStageFiles($message) {
   git commit -a -m $message
+}
+function gitPushOrigin($branch) {
+  git push origin $branch
 }
 function gitPushOriginDevelop() {
   git push origin develop

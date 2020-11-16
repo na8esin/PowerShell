@@ -1,3 +1,7 @@
+iex "New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Outbound -LocalPort 3306 -Action Allow -Protocol TCP";
+iex "New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Inbound -LocalPort 3306 -Action Allow -Protocol TCP";
+
+
 # ポート転送確認
 netsh interface portproxy show all
 # ポート転送削除。一つ一つ消さないといけないの？面倒
