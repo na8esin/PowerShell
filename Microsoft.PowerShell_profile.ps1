@@ -14,6 +14,11 @@ Set-PSReadlineOption -BellStyle None
 function prompt(){
     $Host.ui.RawUI.WindowTitle = Convert-Path (pwd).path
     $env:LANG = "ja_JP.UTF-8"
+    [System.Console]::OutputEncoding = [System.Text.Encoding]::GetEncoding("utf-8")
+    [System.Console]::InputEncoding = [System.Text.Encoding]::GetEncoding("utf-8")
+
+    # git logなどのマルチバイト文字を表示させるため (絵文字含む)
+    $env:LESSCHARSET = "utf-8"
 }
 
 function binCakeServer {
