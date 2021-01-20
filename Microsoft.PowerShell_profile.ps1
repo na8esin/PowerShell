@@ -1,3 +1,4 @@
+Set-Alias -name gac -value gitAddCheckout
 Set-Alias -name gco -value gitCheckout
 Set-Alias -name gca -value gitCommitAutomaticallyStageFiles
 Set-Alias -name gcad -value gitCommitAutomaticallyStageFilesDevelop
@@ -21,12 +22,14 @@ function binCakeServer {
 function vendorBinPhpUnit($path) {
   vendor/bin/phpunit $path
 }
-
+function gitAddCheckout() {
+  git add . ; git checkout;
+}
 function gitCommitAutomaticallyStageFilesDevelop($message) {
   git pull ; gca $message; gpod;
 }
 function gitCommitAutomaticallyStageFiles($message) {
-  git commit -a -m $message
+  git add . ; git commit -a -m $message
 }
 function gitPushOrigin($branch) {
   git push origin $branch
@@ -37,8 +40,8 @@ function gitPushOriginDevelop() {
 function gitPushOriginMaster() {
   git push origin master
 }
-function gitCheckout() {
-  git checkout
+function gitCheckout($branch) {
+  git checkout $branch
 }
 function gitLogOneline($rows) {
   git log --oneline $rows
