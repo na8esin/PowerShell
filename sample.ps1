@@ -1,6 +1,11 @@
+# chatwork
+## 自分のルームにhello
+curl -X POST -H "X-ChatWorkToken: ${env:ChatWorkToken}" `
+  -d "body=Hello+Chatwork%21&self_unread=0" "https://api.chatwork.com/v2/rooms/199541417/messages"
+
+
 iex "New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Outbound -LocalPort 3306 -Action Allow -Protocol TCP";
 iex "New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Inbound -LocalPort 3306 -Action Allow -Protocol TCP";
-
 
 # ポート転送確認
 netsh interface portproxy show all
