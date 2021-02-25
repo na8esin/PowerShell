@@ -6,6 +6,10 @@ Set-Alias -name gpo -value gitPushOrigin
 Set-Alias -name gpom -value gitPushOriginMaster
 Set-Alias -name gpod -value gitPushOriginDevelop
 Set-Alias -name glo -value gitLogOneline
+Set-Alias -name gr -value gitResetSoft
+Set-Alias -name gst -value gitStatus
+
+
 Set-Alias -name unit -value vendorBinPhpUnit
 Set-Alias -name cake -value binCakeServer
 
@@ -50,6 +54,12 @@ function gitCheckout($branch) {
 }
 function gitLogOneline($rows) {
   git log --oneline $rows
+}
+function gitResetSoft() {
+  git reset --soft HEAD^
+}
+function gitStatus() {
+  git status
 }
 
 function nano($path) {
